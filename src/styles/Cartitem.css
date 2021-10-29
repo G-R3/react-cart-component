@@ -1,0 +1,45 @@
+.Cartitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.8rem 1rem;
+}
+.Cartitem-name {
+  width: 200px;
+  text-align: start;
+  font-weight: 300;
+}
+.Cartitem-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Cartitem-options button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+}
+.Cartitem-options button:hover {
+  cursor: pointer;
+  background-color: #e4e4e4;
+}
+.Cartitem-options p {
+  margin: 0 1rem;
+}
+.Cartitem-price {
+  width: 50px;
+  text-align: start;
+}
+
+@media (max-width: 500px) {
+  .Cartitem {
+    flex-direction: column;
+  }
+  .Cartitem-name {
+    text-align: center;
+  }
+  .Cartitem-price {
+    text-align: center;
+  }
+}

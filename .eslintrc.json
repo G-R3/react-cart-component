@@ -17,6 +17,7 @@
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ",jsx"] }],
-    "react/prefer-stateless-function": [0]
+    "react/prefer-stateless-function": [0],
+    "react/prop-types": [0]
   }
 }
