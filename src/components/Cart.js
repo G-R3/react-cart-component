@@ -89,7 +89,7 @@ class Cart extends Component {
           );
         })}
 
-        <h2>
+        <h2 className="Cart-total">
           Total: $
           {items
             .reduce((accum, curr) => accum + curr.price * curr.qty, 0)
