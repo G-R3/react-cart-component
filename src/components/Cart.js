@@ -5,28 +5,35 @@ import '../styles/Cart.css';
 class Cart extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      items: [
-        {
-          id: 1,
-          name: 'Skateboard Deck',
-          price: 60,
-          qty: 1,
-        },
-        {
-          id: 2,
-          name: 'Skateboard Trucks',
-          price: 24.99,
-          qty: 1,
-        },
-        {
-          id: 3,
-          name: 'Skateboard Bearings',
-          price: 17.95,
-          qty: 1,
-        },
-      ],
-    };
+    const items = JSON.parse(localStorage.getItem('items'));
+    if (items) {
+      this.state = {
+        items: [...items],
+      };
+    } else {
+      this.state = {
+        items: [
+          {
+            id: 1,
+            name: 'Skateboard Deck',
+            price: 60,
+            qty: 1,
+          },
+          {
+            id: 2,
+            name: 'Skateboard Trucks',
+            price: 24.99,
+            qty: 1,
+          },
+          {
+            id: 3,
+            name: 'Skateboard Bearings',
+            price: 17.95,
+            qty: 1,
+          },
+        ],
+      };
+    }
   }
 
   incrementQty = (index) => {
@@ -42,6 +49,8 @@ class Cart extends Component {
         return item;
       }),
     });
+
+    localStorage.setItem('items', JSON.stringify(items));
   };
 
   decrementQty = (index) => {
@@ -57,6 +66,8 @@ class Cart extends Component {
         return item;
       }),
     });
+
+    localStorage.setItem('items', JSON.stringify(items));
   };
 
   render() {
