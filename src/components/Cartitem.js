@@ -25,7 +25,7 @@ class Cartitem extends Component {
             +
           </button>
         </div>
-        <p className="Cartitem-price">${price * qty}</p>
+        <p className="Cartitem-price">${(price * qty).toFixed(2)}</p>
       </div>
     );
   }

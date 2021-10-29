@@ -80,7 +80,9 @@ class Cart extends Component {
 
         <h2>
           Total: $
-          {items.reduce((accum, curr) => accum + curr.price * curr.qty, 0)}
+          {items
+            .reduce((accum, curr) => accum + curr.price * curr.qty, 0)
+            .toFixed(2)}
         </h2>
       </div>
     );
